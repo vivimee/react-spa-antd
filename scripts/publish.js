@@ -12,7 +12,7 @@ const connection = {
     host: '',
     port: '22',
     username: '',
-    password: ''
+    password: '',
 };
 
 const dirRegExp = /\/(.*\/|)(.*)$/g;
