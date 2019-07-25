@@ -15,12 +15,7 @@ const devServerOptions = {
     hot: true,
     noInfo: true,
     // open: true,
-    historyApiFallback: {
-        rewrites: [
-            { from: /\/spa\/hsrc$/, to: '/spa/hsrc/' },
-            { from: /\/spa\/hsrc\/.+/, to: '/spa/hsrc/' }
-        ]
-    },
+    historyApiFallback: true,
     stats: {
         chunks: false,
         assets: false,
@@ -36,5 +31,5 @@ const compiler = webpack(config);
 const app = new WebpackDevServer(compiler, devServerOptions);
 app.listen(9090);
 setTimeout(() => {
-    console.log(chalk.greenBright('Server listening on: http://localhost:9090/spa/hsrc/'));
+    console.log(chalk.greenBright('Server listening on: http://localhost:9090/'));
 }, 3000);

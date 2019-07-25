@@ -11,7 +11,7 @@ const store = createStore(reducers);
 
 export default () => (
   <Provider store={store}>
-    <BrowserRouter basename="/spa/hsrc">
+    <BrowserRouter>
       <AppContainer>{createRoutes()}</AppContainer>
     </BrowserRouter>
   </Provider>
