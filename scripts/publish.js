@@ -9,10 +9,10 @@ const sftp = new Client();
 const resourceDirpath = path.resolve(__dirname, '../dist');
 const targetDirpath = '/var/www/spa-projects/' + packageJson.name;
 const connection = {
-    host: '94.191.98.222',
+    host: '',
     port: '22',
-    username: 'pmm',
-    password: 'peng940805'
+    username: '',
+    password: ''
 };
 
 const dirRegExp = /\/(.*\/|)(.*)$/g;
