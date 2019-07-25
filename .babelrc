@@ -1,0 +1,25 @@
+{
+    "presets": [
+        "@babel/preset-react",
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "usage",
+                "corejs": 2,
+                "targets": {
+                    "ie": 8
+                }
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": true // `style: true` 会加载 less 文件
+            }
+        ]
+    ]
+}
