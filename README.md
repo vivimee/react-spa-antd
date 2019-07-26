@@ -19,7 +19,7 @@ react-spa-template
     ├── assets          // static resource
     ├── components      // react components
     ├── containers      // specify a container for every page
-        |-- AppContainer // handle menus and logo. every page should be wrapped with AppContainer
+        |-- AppContainer // handle menus. every page should be wrapped with AppContainer
     ├── core
         |-- App.jsx     // application's root element, bootstrap the application
     ├── redux           // specify actions, reducers and action-constant
