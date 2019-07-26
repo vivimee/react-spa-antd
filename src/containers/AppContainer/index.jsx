@@ -1,27 +1,51 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Layout } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 
 import './index.less';
 
+const { Header, Sider, Content } = Layout;
+const { Item } = Menu;
+
 class AppContainer extends Component {
-  componentDidMount() {
-    window.scrollTo(0, 0);
-    console.log(this.constructor.name, this.props);
+  constructor() {
+    super();
+    this.state = {
+      collapsed: false,
+    };
   }
 
   render() {
-    const { Header } = Layout;
     const { children } = this.props;
+    const { collapsed } = this.state;
+
     return (
       <Layout className="app-container">
-        <Header className="app-header">
-          <Link to="/">home</Link>
-          <Link to="/detail">detail</Link>
-          <Link to="/abcdefg">404</Link>
-        </Header>
-        <Layout className="app-body">{children}</Layout>
+        <Sider trigger={null} collapsible collapsed={collapsed}>
+          <div className="logo" />
+          <Menu theme="dark" defaultSelectedKeys={['1']}>
+            <Item key="1">
+              <Link to="/">
+                <Icon type="user" />
+                home
+              </Link>
+            </Item>
+            <Item key="2">
+              <Link to="/detail">
+                <Icon type="video-camera" />
+                detail
+              </Link>
+            </Item>
+            <Item key="3">
+              <Link to="/abcdefg">404</Link>
+            </Item>
+          </Menu>
+        </Sider>
+        <Layout>
+          <Header className="app-header"><span /></Header>
+          <Content className="app-body">{children}</Content>
+        </Layout>
       </Layout>
     );
   }

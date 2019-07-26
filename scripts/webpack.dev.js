@@ -32,4 +32,4 @@ const app = new WebpackDevServer(compiler, devServerOptions);
 app.listen(9090);
 setTimeout(() => {
     console.log(chalk.greenBright('Server listening on: http://localhost:9090/'));
-}, 3000);
+}, 6000);
