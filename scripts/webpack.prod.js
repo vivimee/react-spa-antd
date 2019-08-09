@@ -13,6 +13,9 @@ const config = merge(webpackConfig, {
     mode: 'production',
     optimization: {
         moduleIds: 'hashed',
+        splitChunks: {
+            name: false
+        }
     },
     plugins: [new CleanWebpackPlugin(), new VisualizerPlugin()],
 });
